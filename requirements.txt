@@ -1,3 +1,5 @@
-Flask==2.0.3
+Flask==3.0.3
 google-cloud-functions==1.0.0
-request==2.26.0
+requests==2.26.0
+Werkzeug==3.0.3
+gunicorn==23.0.0

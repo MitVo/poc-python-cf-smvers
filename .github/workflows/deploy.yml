@@ -3,7 +3,8 @@ name: Deploy Python Application
 on:
   push:
     branches:
-      - main
+      - master
+      - dev
 
 jobs:
   build-and-deploy:
@@ -11,10 +12,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
@@ -24,8 +25,7 @@ jobs:
           pip install -r requirement-test.txt
 
       - name: Run tests
-        run: |
-          pytest main_test.py
+        run: pytest
 
   #    - name: Deploy to Cloud Functions
   #      run: |
