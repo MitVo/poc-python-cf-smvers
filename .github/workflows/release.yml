@@ -30,7 +30,6 @@ jobs:
           echo "REPO_NAME=${REPO_NAME}" >> $GITHUB_ENV 
 #####
       - name: Semantic Release Custom Action
-        id: semantic_release
         uses: MitVo/semantic-release-python@master
         env:
           REPO_NAME: ${{ env.REPO_NAME }}
@@ -38,7 +37,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Tag generated
-        run: echo "RELEASE_TAG=${{ steps.semantic_release.outputs.release_version }}" >> $GITHUB_ENV
+        run: echo "RELEASE_TAG=${{ steps.semantic-release.outputs.release_version }}" >> $GITHUB_ENV
 #####
   Publish:
     environment: testing
