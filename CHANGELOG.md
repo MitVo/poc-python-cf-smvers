@@ -1,5 +1,10 @@
 # Gitmoji Changelog poc-python-cf-smvers 🎈
 
+# [1.0.1](https://github.com/MitVo/poc-python-cf-smvers/compare/1.0.0...1.0.1) (2025-06-10)
+
+## 🔨 Refactor
+-  Fixed test ([`acd968a`](https://github.com/MitVo/poc-python-cf-smvers/commits/acd968a) 👷 mitzyvalenciaordonez &#x1F4C5; 2025-06-10 :16:54)
+
 # 1.0.0 (2025-06-10)
 
 ## ✨ New Features
