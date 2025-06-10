@@ -2,6 +2,7 @@ __version__ = "0.1.0"
 
 from flask import Flask, request, jsonify
 from google.cloud import storage
+import os
 
 app = Flask(__name__)
 
