@@ -1,0 +1,11 @@
+__version__ = "0.1.0"
+
+from flask import Flask, request, jsonify
+from google.cloud import storage
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    """Return a friendly HTTP greeting."""
+    return "Hello, World!"

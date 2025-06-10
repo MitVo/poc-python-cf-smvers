@@ -1,0 +1,56 @@
+name: Release Process
+on:
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  semantic-release:
+    environment: testing
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install build and twine
+        run: python -m pip install --upgrade pip build twine bump2version wheel
+
+      - name: Extract repository name
+        run: |
+          REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
+          echo "REPO_NAME=${REPO_NAME}" >> $GITHUB_ENV 
+#####
+      - name: Semantic Release Custom Action
+        id: semantic_release
+        uses: MitVo/semantic-release-python@master
+        env:
+          REPO_NAME: ${{ env.REPO_NAME }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          module_name: 'poc_module'
+
+      - name: Tag generated
+        run: echo "RELEASE_TAG=${{ steps.semantic_release.outputs.release_version }}" >> $GITHUB_ENV
+#####
+  Publish:
+    environment: testing
+    runs-on: ubuntu-latest
+    needs: semantic-release
+    permissions:
+      contents: write
+      ## IMPORTANT: this permission is mandatory for Trusted Publishing
+      id-token: write
+    steps:
+      - name: Publish
+        run: |
+          python -m build
+          twine upload dist/* --repository-url https://upload.pypi.org/legacy/ --verbose
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{secrets.PYPI_TOKEN}}
