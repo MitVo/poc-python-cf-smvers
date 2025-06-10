@@ -20,13 +20,10 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-          pip install -r requirement-test.txt
+        run: pip install -r requirements.txt
 
       - name: Run tests
-        run: |
-          pytest main_test.py
+        run: pytest
 
   #    - name: Deploy to Cloud Functions
   #      run: |
