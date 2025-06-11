@@ -1,5 +1,10 @@
 # Gitmoji Changelog poc-python-cf-smvers 🎈
 
+# [1.1.2](https://github.com/MitVo/poc-python-cf-smvers/compare/1.1.1...1.1.2) (2025-06-11)
+
+## 🐛 Bug Fixes
+-  Fixed test ([`421d437`](https://github.com/MitVo/poc-python-cf-smvers/commits/421d437) 👷 mitzyvalenciaordonez &#x1F4C5; 2025-06-11 :10:07)
+
 # [1.1.1](https://github.com/MitVo/poc-python-cf-smvers/compare/1.1.0...1.1.1) (2025-06-11)
 
 ## 🐛 Bug Fixes
