@@ -1,5 +1,10 @@
 # Gitmoji Changelog poc-python-cf-smvers 🎈
 
+# [1.1.0](https://github.com/MitVo/poc-python-cf-smvers/compare/1.0.1...1.1.0) (2025-06-11)
+
+## ✨ New Features
+-  Added cache deps ([`39040fe`](https://github.com/MitVo/poc-python-cf-smvers/commits/39040fe) 👷 mitzyvalenciaordonez &#x1F4C5; 2025-06-11 :09:44)
+
 # [1.0.1](https://github.com/MitVo/poc-python-cf-smvers/compare/1.0.0...1.0.1) (2025-06-10)
 
 ## 🔨 Refactor
