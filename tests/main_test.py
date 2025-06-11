@@ -5,7 +5,7 @@ import os
 # Add the src directory to the Python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
-import src.main import app
+from src.main import app
 
 @pytest.fixture
 def client():
