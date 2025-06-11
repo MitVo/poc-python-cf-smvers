@@ -6,5 +6,6 @@ setup(
   description="A simple Python Cloud Function with versioning",
   author="MitVo",
   author_email=" ",
-  packages=["src"]
+  packages=["src"],
+  package_dir={"": "src"}
 )
